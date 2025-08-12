@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Interativo: Importação Seven para Trello</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out;
+        }
+        .accordion-button.active .arrow {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8">
+        
+        <!-- Cabeçalho -->
+        <header class="text-center mb-8">
+            <h1 class="text-3xl sm:text-4xl font-bold text-blue-900">Guia Interativo de Importação</h1>
+            <p class="text-lg text-gray-600 mt-2">Seven para Trello</p>
+        </header>
+
+        <div class="max-w-4xl mx-auto">
+            
+            <!-- Acordeão Container -->
+            <div id="accordion-container" class="space-y-4">
+
+                <!-- Parte 1: Extração e Preparação (Laranja) -->
+                <div class="bg-orange-50 rounded-xl shadow-md border border-orange-200">
+                    <button class="accordion-button w-full flex justify-between items-center p-5 text-left font-semibold text-lg text-orange-800 focus:outline-none">
+                        <span>Parte 1: Extração e Preparação Inicial</span>
+                        <svg class="arrow w-6 h-6 text-orange-600 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="p-5 border-t border-orange-200">
+                            <ol class="list-decimal list-inside space-y-4 text-gray-700">
+                                <li><strong>Filtrar Prazos do Dia Anterior:</strong>
+                                    <ul class="list-disc list-inside mt-2 ml-4 bg-white p-3 rounded-lg">
+                                        <li>Abra a planilha <code>Pendentes Meli</code>.</li>
+                                        <li>Na coluna <code>AR (Data de Cadastro)</code>, filtre os registros do dia anterior.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Copiar para a Base de Automação:</strong>
+                                    <ul class="list-disc list-inside mt-2 ml-4 bg-white p-3 rounded-lg">
+                                        <li>Copie as linhas filtradas.</li>
+                                        <li>Cole na aba <code>PLAN EXPORTADA SEVEN</code> da planilha "Plan Base Automação TRELLO - SEVEN".</li>
+                                        <li><a href="https://docs.google.com/spreadsheets/d/1Ha3g1PG3Lm3IW9taolQqlEy14gsHjgt9/" target="_blank" class="inline-block bg-orange-600 text-white px-3 py-1 rounded-md hover:bg-orange-700 transition-colors mt-2">Acessar Planilha Base</a></li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Parte 2: Automação e Limpeza (Verde) -->
+                <div class="bg-green-50 rounded-xl shadow-md border border-green-200">
+                    <button class="accordion-button w-full flex justify-between items-center p-5 text-left font-semibold text-lg text-green-800 focus:outline-none">
+                        <span>Parte 2: Automação e Limpeza da Planilha</span>
+                        <svg class="arrow w-6 h-6 text-green-600 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="p-5 border-t border-green-200">
+                           <ol class="list-decimal list-inside space-y-4 text-gray-700">
+                                <li><strong>Gerar e Copiar Dados Automatizados:</strong>
+                                    <ul class="list-disc list-inside mt-2 ml-4 bg-white p-3 rounded-lg">
+                                        <li>Acesse a aba <code>automação TIMES</code>.</li>
+                                        <li>Copie os dados da coluna <code>A (Card Name)</code> até a <code>H (Time)</code>.</li>
+                                        <li>Cole em um <strong>novo arquivo Excel</strong>. Esta será sua planilha de trabalho.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Limpeza Inicial dos Cards:</strong>
+                                    <ul class="list-disc list-inside mt-2 ml-4 bg-red-50 p-3 rounded-lg border-l-4 border-red-400">
+                                        <li>Na sua nova planilha, localize a coluna <code>A (Card Name)</code>.</li>
+                                        <li>Exclua todas as linhas com: <code>"Orientar de Audiência"</code> e <code>"Guia Anexada pela CJ"</code>.</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Parte 3: Divisão por Equipes (Azul) -->
+                <div class="bg-blue-50 rounded-xl shadow-md border border-blue-200">
+                    <button class="accordion-button w-full flex justify-between items-center p-5 text-left font-semibold text-lg text-blue-800 focus:outline-none">
+                        <span>Parte 3: Divisão das Planilhas por Equipe</span>
+                        <svg class="arrow w-6 h-6 text-blue-600 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="p-5 border-t border-blue-200 space-y-6">
+                            <!-- Monitoramentos -->
+                            <div class="p-4 border rounded-lg bg-teal-50 border-teal-200">
+                                <h4 class="font-bold text-teal-800">5. Planilha de MONITORAMENTOS</h4>
+                                <p class="text-sm text-teal-700 mt-1">Filtre por "Verificar trânsito", "Comprovar OBF" e "Contestação sem audiência".</p>
+                                <p class="text-sm text-teal-700 mt-1">Na coluna "List Name", use <strong>"BACKLOG"</strong>.</p>
+                                <a href="https://trello.com/b/v2aJrNKp/meli-monitoramentos" target="_blank" class="inline-block bg-teal-600 text-white px-4 py-2 rounded-md hover:bg-teal-700 transition-colors mt-3 text-sm">Quadro Monitoramentos</a>
+                            </div>
+                            <!-- Bahia -->
+                            <div class="p-4 border rounded-lg bg-indigo-50 border-indigo-200">
+                                <h4 class="font-bold text-indigo-800">6. Planilhas da BAHIA (BA)</h4>
+                                <p class="text-sm text-indigo-700 mt-1">Filtre a UF para "BA" e separe em duas planilhas: "A FAZER DA SEMANA" e "BACKLOG".</p>
+                                <div class="flex space-x-2 mt-3">
+                                    <a href="https://trello.com/b/zQ7EoShj/meli-bahia" target="_blank" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transition-colors text-sm">Quadro BA</a>
+                                    <a href="https://trello.com/b/rSzxdetv/semanas-futuras-meli-bahia" target="_blank" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transition-colors text-sm">Quadro BA Futuras</a>
+                                </div>
+                            </div>
+                            <!-- Demais Estados -->
+                             <div class="p-4 border rounded-lg bg-fuchsia-50 border-fuchsia-200">
+                                <h4 class="font-bold text-fuchsia-800">7. Planilhas dos DEMAIS ESTADOS (DE)</h4>
+                                <p class="text-sm text-fuchsia-700 mt-1">Filtre as UFs restantes e separe em "A FAZER DA SEMANA" e "BACKLOG".</p>
+                                <div class="flex space-x-2 mt-3">
+                                    <a href="https://trello.com/b/RbCjSiKB/meli-demais-estados" target="_blank" class="inline-block bg-fuchsia-600 text-white px-4 py-2 rounded-md hover:bg-fuchsia-700 transition-colors text-sm">Quadro DE</a>
+                                    <a href="https://trello.com/b/iiFQeLYH/semanas-futuras-meli-demais-estados" target="_blank" class="inline-block bg-fuchsia-600 text-white px-4 py-2 rounded-md hover:bg-fuchsia-700 transition-colors text-sm">Quadro DE Futuras</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Parte 4: Importação no Trello -->
+                <div class="bg-white rounded-xl shadow-md border border-gray-200">
+                    <button class="accordion-button w-full flex justify-between items-center p-5 text-left font-semibold text-lg text-gray-800 focus:outline-none">
+                        <span>Parte 4: Processo de Importação no Trello</span>
+                        <svg class="arrow w-6 h-6 text-gray-600 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="p-5 border-t border-gray-200">
+                            <ol class="list-decimal list-inside space-y-4 text-gray-700">
+                                <li><strong>Acessar a Ferramenta de Importação:</strong>
+                                    <ul class="list-disc list-inside mt-2 ml-4 bg-gray-50 p-3 rounded-lg">
+                                        <li>Faça login no Trello com a conta de <strong>Socorro</strong>.</li>
+                                        <li>No quadro desejado, clique em <strong>"Import by Blue Cat"</strong>.</li>
+                                    </ul>
+                                </li>
+                                <li class="font-semibold"><strong>Realizar a Importação:</strong>
+                                    <div class="mt-2 ml-4 p-4 bg-yellow-50 border-l-4 border-yellow-400 text-yellow-800 rounded-r-lg">
+                                        <p><strong>Ponto de Atenção:</strong> Antes de confirmar, verifique se todos os indicadores estão <strong>verdes</strong> para evitar erros.</p>
+                                        <p class="mt-2"><strong>Importante:</strong> Após iniciar, <strong>não feche nem recarregue a página</strong>. Aguarde a conclusão.</p>
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const accordionButtons = document.querySelectorAll('.accordion-button');
+
+            accordionButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const content = button.nextElementSibling;
+                    
+                    button.classList.toggle('active');
+
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
